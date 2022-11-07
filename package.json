@@ -1,30 +1,34 @@
 {
-  "name": "create-nextplat",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "Next.js Easy-to-use Template",
-  "main": "index.js",
-  "author": "Jooy2 <jootc.help@gmail.com>",
-  "license": "MIT",
-  "bin": {
-    "create-vutron": "index.js"
-  },
-  "scripts": {
-    "test": "node index.js"
-  },
-  "keywords": [
-    "nextjs",
-    "react",
-    "template",
-    "skeleton",
-    "next",
-    "ssr",
-    "boilerplate",
-    "vercel"
-  ],
-  "devDependencies": {
-    "eslint": "^8.24.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
-  }
+	"name": "create-nextplat",
+	"type": "module",
+	"version": "1.0.1",
+	"description": "Next.js Easy-to-use Template",
+	"main": "index.js",
+	"author": "Jooy2 <jootc.help@gmail.com>",
+	"license": "MIT",
+	"bin": {
+		"create-vutron": "index.js"
+	},
+	"scripts": {
+		"test": "node index.js",
+		"format": "prettier .",
+		"format:fix": "prettier . --write"
+	},
+	"keywords": [
+		"nextjs",
+		"react",
+		"template",
+		"skeleton",
+		"next",
+		"ssr",
+		"boilerplate",
+		"vercel"
+	],
+	"devDependencies": {
+		"eslint": "^8.24.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"prettier": "^2.7.1"
+	}
 }
