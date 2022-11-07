@@ -40,21 +40,6 @@ async function run() {
 			}
 		});
 
-	const runInitScript = async () =>
-		new Promise((resolve, reject) => {
-			try {
-				spawn('node', [`${packageName}/.scripts/initialize.js`], { stdio: 'inherit' })
-					.on('error', (err) => {
-						reject(err);
-					})
-					.on('exit', (code) => {
-						resolve(code);
-					});
-			} catch (e) {
-				reject(e);
-			}
-		});
-
 	try {
 		if (existsSync(packageName) && statSync(packageName).isDirectory()) {
 			console.error(`Failed: Directory "${packageName}" already exists.`);
@@ -68,7 +53,6 @@ async function run() {
 		rmSync(join(process.cwd(), packageName, '.git'), { recursive: true, force: true });
 
 		await installModules();
-		await runInitScript();
 	} catch (e) {
 		console.error(e?.message);
 		process.exit(1);
