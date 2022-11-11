@@ -11,9 +11,7 @@
 	},
 	"type": "module",
 	"main": "dist/index.js",
-	"bin": {
-		"create-nextplat": "dist/index.js"
-	},
+	"bin": "dist/index.js",
 	"exports": {
 		".": "./dist/index.js"
 	},
