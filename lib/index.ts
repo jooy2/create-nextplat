@@ -2,23 +2,17 @@
 import { spawn } from 'child_process';
 import { existsSync, rmSync, statSync } from 'fs';
 import { join } from 'path';
-import pkg from './package.json' assert { type: 'json' };
 
-const packageName = pkg.name.replace('create-', '');
+const PKG_NAME = 'nextplat';
+const PKG_AUTHOR = 'jooy2';
 
-async function run() {
-	const clone = async () =>
+async function run(): Promise<void> {
+	const clone = async (): Promise<number> =>
 		new Promise((resolve, reject) => {
 			try {
 				spawn(
 					'git',
-					[
-						'clone',
-						`https://github.com/${pkg.repository.url.split('/').at(-2)}/${packageName}`,
-						packageName,
-						'--depth',
-						'1'
-					],
+					['clone', `https://github.com/${PKG_AUTHOR}/${PKG_NAME}`, PKG_NAME, '--depth', '1'],
 					{ stdio: 'inherit' }
 				)
 					.on('error', (err) => {
@@ -32,11 +26,11 @@ async function run() {
 			}
 		});
 
-	const installModules = async () =>
+	const installModules = async (): Promise<number> =>
 		new Promise((resolve, reject) => {
 			try {
 				const npmCommand = /^win/.test(process.platform) ? 'npm.cmd' : 'npm';
-				spawn(npmCommand, ['install'], { stdio: 'inherit', cwd: join(process.cwd(), packageName) })
+				spawn(npmCommand, ['install'], { stdio: 'inherit', cwd: join(process.cwd(), PKG_NAME) })
 					.on('error', (err) => {
 						reject(err);
 					})
@@ -49,8 +43,8 @@ async function run() {
 		});
 
 	try {
-		if (existsSync(packageName) && statSync(packageName).isDirectory()) {
-			console.error(`Failed: Directory "${packageName}" already exists.`);
+		if (existsSync(PKG_NAME) && statSync(PKG_NAME).isDirectory()) {
+			console.error(`Failed: Directory "${PKG_NAME}" already exists.`);
 			process.exit(1);
 			return;
 		}
@@ -58,7 +52,7 @@ async function run() {
 		await clone();
 
 		// Remove .git, docs directory
-		rmSync(join(process.cwd(), packageName, '.git'), { recursive: true, force: true });
+		rmSync(join(process.cwd(), PKG_NAME, '.git'), { recursive: true, force: true });
 
 		await installModules();
 	} catch (e) {

@@ -1,19 +1,18 @@
 module.exports = {
 	env: {
 		node: true,
-		es2021: true,
+		es6: true
 	},
-	parser: "@babel/eslint-parser",
 	parserOptions: {
+		parser: '@typescript-eslint/parser',
+		sourceType: 'module',
 		ecmaVersion: 2022,
 		requireConfigFile: false,
 		babelOptions: {
-			plugins: [
-				'@babel/plugin-syntax-import-assertions'
-			],
-		},
+			plugins: ['@typescript-eslint']
+		}
 	},
-	extends: ['airbnb-base', 'prettier'],
+	extends: ['airbnb-base', 'plugin:@typescript-eslint/recommended', 'prettier'],
 	rules: {
 		'linebreak-style': 0,
 		'import/extensions': 0,
