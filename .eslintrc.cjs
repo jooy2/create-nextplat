@@ -1,12 +1,19 @@
 module.exports = {
 	env: {
+		node: true,
 		es2021: true,
-		node: true
+	},
+	parser: "@babel/eslint-parser",
+	parserOptions: {
+		ecmaVersion: 2022,
+		requireConfigFile: false,
+		babelOptions: {
+			plugins: [
+				'@babel/plugin-syntax-import-assertions'
+			],
+		},
 	},
 	extends: ['airbnb-base', 'prettier'],
-	parserOptions: {
-		ecmaVersion: 12
-	},
 	rules: {
 		'linebreak-style': 0,
 		'import/extensions': 0,

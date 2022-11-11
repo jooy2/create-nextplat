@@ -2,8 +2,9 @@
 import { spawn } from 'child_process';
 import { existsSync, rmSync, statSync } from 'fs';
 import { join } from 'path';
+import pkg from './package.json' assert { type: 'json' };
 
-const packageName = 'nextplat';
+const packageName = pkg.name.replace('create-', '');
 
 async function run() {
 	const clone = async () =>
@@ -11,7 +12,13 @@ async function run() {
 			try {
 				spawn(
 					'git',
-					['clone', `https://github.com/jooy2/${packageName}`, packageName, '--depth', '1'],
+					[
+						'clone',
+						`https://github.com/${pkg.repository.url.split('/').at(-2)}/${packageName}`,
+						packageName,
+						'--depth',
+						'1'
+					],
 					{ stdio: 'inherit' }
 				)
 					.on('error', (err) => {
@@ -28,7 +35,8 @@ async function run() {
 	const installModules = async () =>
 		new Promise((resolve, reject) => {
 			try {
-				spawn('npm', ['install'], { stdio: 'inherit', cwd: join(process.cwd(), packageName) })
+				const npmCommand = /^win/.test(process.platform) ? 'npm.cmd' : 'npm';
+				spawn(npmCommand, ['install'], { stdio: 'inherit', cwd: join(process.cwd(), packageName) })
 					.on('error', (err) => {
 						reject(err);
 					})

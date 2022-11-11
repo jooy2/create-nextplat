@@ -1,13 +1,18 @@
 {
 	"name": "create-nextplat",
-	"type": "module",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Next.js Easy-to-use Template",
-	"main": "index.js",
 	"author": "Jooy2 <jootc.help@gmail.com>",
 	"license": "MIT",
+	"homepage": "https://github.com/jooy2/nextplat",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jooy2/nextplat"
+	},
+	"type": "module",
+	"main": "index.js",
 	"bin": {
-		"create-vutron": "index.js"
+		"create-nextplat": "index.js"
 	},
 	"scripts": {
 		"test": "node index.js",
@@ -25,6 +30,8 @@
 		"vercel"
 	],
 	"devDependencies": {
+		"@babel/eslint-parser": "^7.19.1",
+		"@babel/plugin-syntax-import-assertions": "^7.20.0",
 		"eslint": "^8.24.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.5.0",
