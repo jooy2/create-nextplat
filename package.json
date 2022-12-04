@@ -1,8 +1,8 @@
 {
 	"name": "create-nextplat",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Next.js Easy-to-use Template",
-	"author": "Jooy2 <jootc.help@gmail.com>",
+	"author": "Jooy2 <jooy2.contact@gmail.com>",
 	"license": "MIT",
 	"homepage": "https://github.com/jooy2/nextplat",
 	"repository": {
@@ -35,15 +35,15 @@
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.19.1",
 		"@babel/plugin-syntax-import-assertions": "^7.20.0",
-		"@types/node": "^18.11.9",
-		"@typescript-eslint/eslint-plugin": "^5.42.1",
-		"@typescript-eslint/parser": "^5.42.1",
-		"eslint": "^8.24.0",
+		"@types/node": "^18.11.10",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.29.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-import": "^2.26.0",
-		"prettier": "^2.7.1",
-		"terser": "^5.15.1",
-		"typescript": "^4.8.4"
+		"prettier": "^2.8.0",
+		"terser": "^5.16.1",
+		"typescript": "^4.9.3"
 	}
 }
