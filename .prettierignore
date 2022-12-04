@@ -6,4 +6,6 @@
 .vscode/
 
 # Project files
+node_modules/
 .github/
+dist/

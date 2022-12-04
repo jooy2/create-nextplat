@@ -51,7 +51,7 @@ async function run(): Promise<void> {
 
 		await clone();
 
-		// Remove .git, docs directory
+		// Remove files used only in git repositories
 		rmSync(join(process.cwd(), PKG_NAME, '.git'), { recursive: true, force: true });
 
 		await installModules();

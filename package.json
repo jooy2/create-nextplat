@@ -1,6 +1,7 @@
 {
 	"name": "create-nextplat",
-	"version": "1.0.4",
+	"type": "module",
+	"version": "1.1.0",
 	"description": "Next.js Easy-to-use Template",
 	"author": "Jooy2 <jooy2.contact@gmail.com>",
 	"license": "MIT",
@@ -9,7 +10,6 @@
 		"type": "git",
 		"url": "https://github.com/jooy2/nextplat"
 	},
-	"type": "module",
 	"main": "dist/index.js",
 	"bin": "dist/index.js",
 	"exports": {
@@ -33,8 +33,6 @@
 		"vercel"
 	],
 	"devDependencies": {
-		"@babel/eslint-parser": "^7.19.1",
-		"@babel/plugin-syntax-import-assertions": "^7.20.0",
 		"@types/node": "^18.11.10",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
