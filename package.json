@@ -1,7 +1,7 @@
 {
 	"name": "create-nextplat",
 	"type": "module",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Next.js Easy-to-use Template",
 	"author": "Jooy2 <jooy2.contact@gmail.com>",
 	"license": "MIT",
